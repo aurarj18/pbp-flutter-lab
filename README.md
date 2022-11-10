@@ -1,16 +1,28 @@
-# counter_7
+# Stateless Widget dan Stateful Widget
+- Stateless widget adalah widget yang tidak bisa mengalami perubahan karena adanya perubahan nilai dari suatu state
+- Stateful widget adalah widget yang bisa mengalami perubahan berdasarkan nilai dari suatu state
 
-A new Flutter project.
+# Widget yang digunakan pada proyek ini
+- Text                  : Untuk menampilkan text
+- Align                 : Untuk memberikan alignment pada widget
+- Row                   : Membuat tampilan widget menjadi horizontal
+- FloatingActionButton : Membuat tombol plus minus
+- Container             : Untuk menampung widget
+- Scaffold              : Layar putih yang menjadi dasar bagi widget lainnya
 
-## Getting Started
+# Fungsi dari setState() dan variabel yang dapat terdampak dengan fungsi tersebut
+Melakukan perubahan nilai dari state yang ada pada stateful widget
 
-This project is a starting point for a Flutter application.
+# Const dan Final
+- Const adalah deklarasi variabel immutable dan ketika akan di complie, nilainya harus sudah diketahui
+- Final adalah deklarasi variabel immutable dan ketika akan di compile, nilainya boleh sudah atau belum diketahui, tetapi harus sudah diketahui ketika runtime
 
-A few resources to get you started if this is your first Flutter project:
+# Cara Implementasi
+1. Membuat flutter App bernama `counter_7`
+2. Membuat tombol + dan - dengan FloatingActionButton
+3. Membuat tampilan counter bernilai ganjil menjadi biru, dan counter bernilai genap mejadi merah
+4. Membuat function _decrementCounter()
+5. Membuat conditional ketika tombol ditekan
+6. Menyembunyikan/menghilangkan tombol - apabila counter bernilai 0
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
