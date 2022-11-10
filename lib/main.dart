@@ -121,6 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: Stack(
         children: <Widget>[
+          if (_counter > 0 )
             Align(
               alignment: Alignment.bottomLeft,
               child: FloatingActionButton(
