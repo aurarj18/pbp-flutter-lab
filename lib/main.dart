@@ -1,3 +1,4 @@
+import 'package:counter_7/drawer.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -24,13 +25,13 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Program Counter'),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({super.key});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -41,7 +42,7 @@ class MyHomePage extends StatefulWidget {
   // used by the build method of the State. Fields in a Widget subclass are
   // always marked "final".
 
-  final String title;
+  final String title = 'Flutter Demo Home Page';
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -64,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void _decrementCounter() {
     setState(() {
       if (_counter > 0) {
-        _counter--;
+        _counter -= 1;
       }
     });
   }
@@ -83,6 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
+      drawer: const ScfDrawer(),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
@@ -104,11 +106,11 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             (_counter % 2 == 0
-                ? Text(
+                ? const Text(
                     'Genap',
                     style: TextStyle(color: Colors.red),
                   )
-                : Text(
+                : const Text(
                     'Ganjil',
                     style: TextStyle(color: Colors.blue),
                   )),
@@ -119,24 +121,19 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: Stack(
-        children: <Widget>[
-          if (_counter > 0 )
-            Align(
-              alignment: Alignment.bottomLeft,
-              child: FloatingActionButton(
-              onPressed: _decrementCounter, child: const Icon(Icons.remove),),
-            ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: FloatingActionButton(
-              onPressed: _incrementCounter,
-              tooltip: 'Increment',
-              child: const Icon(Icons.add),
-            ),
-          ),
-        ],
-      )
+
+      floatingActionButton:
+          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        if (_counter > 0)
+          FloatingActionButton(
+              onPressed: _decrementCounter, child: const Icon(Icons.remove)),
+        FloatingActionButton(
+          onPressed: _incrementCounter,
+          tooltip: 'Increment',
+          child: const Icon(Icons.add),
+        ),
+      ]),
+      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
