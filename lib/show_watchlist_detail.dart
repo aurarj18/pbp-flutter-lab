@@ -4,6 +4,7 @@ import 'package:counter_7/tambah_budget.dart';
 import 'package:counter_7/show_budget.dart';
 import 'package:counter_7/show_watchlist.dart';
 import 'package:counter_7/model/watchlist_model.dart';
+import 'package:counter_7/drawer.dart';
 
 class MyWatchListDetail extends StatelessWidget {
   final WatchList myWatchList;
@@ -15,52 +16,7 @@ class MyWatchListDetail extends StatelessWidget {
       appBar: AppBar(
         title: const Text('My Watch List'),
       ),
-      drawer: Drawer(
-        child: Column(
-          children: [
-            // Menambahkan clickable menu
-            ListTile(
-              title: const Text('counter_7'),
-              onTap: () {
-                // Route menu ke halaman utama
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyHomePage()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Tambah Budget'),
-              onTap: () {
-                // Route menu ke halaman form
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyFormPage()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Data Budget'),
-              onTap: () {
-                // Route menu ke halaman form
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyBudgetPage()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('My Watchlist'),
-              onTap: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyWatchList()),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: const ScfDrawer(),
       body: Column(
         children: [
           Center(
