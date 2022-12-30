@@ -1,4 +1,4 @@
-#TUGAS 7
+# TUGAS 7
 
 ## Stateless Widget dan Stateful Widget
 - Stateless widget adalah widget yang tidak bisa mengalami perubahan karena adanya perubahan nilai dari suatu state
@@ -55,3 +55,31 @@ Navigator bekerja dengan konsep Last In First Out, seperti struktur data stack. 
 6. Mengimport `file .dart` agar list input data dapat diakses pada `data.dart`.
 7. Menampilkan data pada list dengan menggunakan builder ListView.builder().
 8. Membuat Card untuk menampilkan judul, nominal, jenis budget.
+
+# TUGAS 9
+## Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+Kita bisa melakukan pengambilan data Json tanpa membuat model terlebih dahulu, namun kita tidak bisa memastikan data JSON yang diambil mempunyai bentuk seperti yang kita inginkan. Oleh karena itu, lebih baik jika kita membuat model terlebih dahulu.
+
+## Widget yang digunakan
+- Text : Menampilkan text
+- Stack : Memposisikan children relatif terhadap tepi-tepi kotak
+- column : Menampung widget dan disusun secara vertikal
+- SizedBox : Menampilkan box dengan ukuran tertentu
+- TextSpan : Menampilkan teks yang immutable secara merentang
+- Container : Menampung berbagai widget untuk menerapkan posisi, ukuran, dan properti lainnya
+- FutureBuilder : Widget yang bisa membangun tampilan dirinya sendiri. 
+- MainAxisAlignment : Menempatkan children sepanjang sumbu utama dalam sebuah layout flex
+- Edgelnsets : Memberikan offset ke 4 arah kardinal yang bersifat immutable
+
+## Mekanisme pengambilan data dari JSON hingga dapat ditampilkan pada Flutter
+- Menambahkan depedensi http
+- Melakukan GET pada data JSON yang selanjutnya dikonversikan ke dalam suatu model yang dibuat
+- Data JSON ditampilkan menggunakan FutureBuilder
+
+## Cara Implementasi Checklist
+- Menambahkan depedensi http agar bisa mengambil data dari internet
+- Membuat model serialisasi data JSON dari MyWatchlist
+- Fetch data MyWatchlist secara asynchronous dari website, lalu serialisasi data tersebut
+- Memanfaatkan data yang telah diserialisasi untuk membuat halaman yang menampilkan list dari objek-objek MyWatchlist
+- Melakukan wraping setiap objek sebagai tombol dengan routing ke halaman detail watchlist
+- Menampilkan atribut-atribut dari suatu objek MyWatchlist dari suatu halaman

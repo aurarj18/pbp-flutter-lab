@@ -1,3 +1,4 @@
+import 'package:counter_7/show_watchlist.dart';
 import 'package:flutter/material.dart';
 import 'main.dart';
 import 'show_budget.dart';
@@ -41,6 +42,16 @@ class ScfDrawer extends StatelessWidget {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => const MyBudgetPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('My Watchlist'),
+              onTap: () {
+                // Route menu ke halaman form
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MyWatchList()),
                 );
               },
             ),
